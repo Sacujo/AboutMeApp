@@ -21,10 +21,6 @@ final class LoginViewController: UIViewController {
         passwordTextField.delegate = self
     }
     
-    @IBAction func unwind(for segue: UIStoryboardSegue) {
-        clearTextFields()
-    }
-    
     @IBAction func forgotLoginButtonTapped(_ sender: UIButton) {
         showAlert(title: "Forgot login?", message: "Your login is \(login)")
     }
@@ -49,6 +45,7 @@ final class LoginViewController: UIViewController {
     }
 }
 
+//MARK: - Sugue Methods
 extension LoginViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard loginTextField.text == login, passwordTextField.text == password else {
@@ -62,8 +59,13 @@ extension LoginViewController {
         let welcomeVC = segue.destination as? WelcomeViewController
         welcomeVC?.userName = loginTextField.text
     }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        clearTextFields()
+    }
 }
 
+//MARK: - TextField Methods
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
@@ -77,11 +79,6 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
-    
-
-    
-
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

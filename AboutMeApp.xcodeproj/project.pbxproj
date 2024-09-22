@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1526155E2C9FF43C006D0EA8 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1526155D2C9FF425006D0EA8 /* AboutMeViewController.swift */; };
+		152615602CA05688006D0EA8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1526155F2CA05688006D0EA8 /* TabBarController.swift */; };
+		152615622CA05FBE006D0EA8 /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152615612CA05FAE006D0EA8 /* BioViewController.swift */; };
 		156CB3E52C9CC821009506FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156CB3DB2C9CC821009506FF /* LaunchScreen.storyboard */; };
 		156CB3E62C9CC821009506FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156CB3DD2C9CC821009506FF /* Main.storyboard */; };
 		156CB3E72C9CC821009506FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 156CB3E22C9CC821009506FF /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1526155D2C9FF425006D0EA8 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		1526155F2CA05688006D0EA8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		152615612CA05FAE006D0EA8 /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
 		152B4EDD2C99FFFC00A1590C /* AboutMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AboutMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		156CB3D62C9CC821009506FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		156CB3D72C9CC821009506FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,8 +86,11 @@
 		156CB3E12C9CC821009506FF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				152615612CA05FAE006D0EA8 /* BioViewController.swift */,
+				1526155D2C9FF425006D0EA8 /* AboutMeViewController.swift */,
 				156CB3DF2C9CC821009506FF /* LoginViewController.swift */,
 				156CB3E02C9CC821009506FF /* WelcomeViewController.swift */,
+				1526155F2CA05688006D0EA8 /* TabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -182,8 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152615602CA05688006D0EA8 /* TabBarController.swift in Sources */,
 				156CB3E82C9CC821009506FF /* AppDelegate.swift in Sources */,
 				156CB3EE2C9CC860009506FF /* Person.swift in Sources */,
+				1526155E2C9FF43C006D0EA8 /* AboutMeViewController.swift in Sources */,
+				152615622CA05FBE006D0EA8 /* BioViewController.swift in Sources */,
 				156CB3F02C9CCC19009506FF /* User.swift in Sources */,
 				156CB3E92C9CC821009506FF /* SceneDelegate.swift in Sources */,
 				156CB3EA2C9CC821009506FF /* LoginViewController.swift in Sources */,

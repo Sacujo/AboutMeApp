@@ -3,6 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -108,9 +109,8 @@
                                     <segue destination="4PZ-ZV-QE1" kind="unwind" unwindAction="unwindFor:" id="K1p-0j-PBC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My name is " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyd-hJ-qlE">
-                                <rect key="frame" x="89" y="187" width="143" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My name is " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyd-hJ-qlE">
+                                <rect key="frame" x="88.5" y="186" width="143" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -122,11 +122,16 @@
                             <constraint firstItem="g5e-KX-ZsD" firstAttribute="top" secondItem="lU0-re-oDC" secondAttribute="top" constant="150" id="1SM-Tw-5aC"/>
                             <constraint firstItem="lU0-re-oDC" firstAttribute="bottom" secondItem="S42-ul-WCF" secondAttribute="bottom" constant="60" id="GRt-uI-h5V"/>
                             <constraint firstItem="S42-ul-WCF" firstAttribute="centerX" secondItem="d1Z-H6-R83" secondAttribute="centerX" id="SfA-Bd-lfC"/>
+                            <constraint firstItem="Fyd-hJ-qlE" firstAttribute="centerX" secondItem="d1Z-H6-R83" secondAttribute="centerX" id="Srn-eS-ZJY"/>
                             <constraint firstItem="g5e-KX-ZsD" firstAttribute="centerX" secondItem="d1Z-H6-R83" secondAttribute="centerX" id="edM-3W-Aby"/>
+                            <constraint firstItem="Fyd-hJ-qlE" firstAttribute="top" secondItem="g5e-KX-ZsD" secondAttribute="bottom" id="qIS-fX-8MH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Welcome" selectedImage="info.circle" catalog="system" id="8hv-H5-2hi"/>
+                    <tabBarItem key="tabBarItem" title="Welcome" image="info.circle.fill" catalog="system" id="8hv-H5-2hi">
+                        <imageReference key="selectedImage" image="info.circle" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
                     <connections>
+                        <outlet property="introductionLabel" destination="Fyd-hJ-qlE" id="IxQ-Rr-P0z"/>
                         <outlet property="welcomeLabel" destination="g5e-KX-ZsD" id="jgK-yZ-JGy"/>
                     </connections>
                 </viewController>
@@ -138,10 +143,19 @@
         <!--Igor-->
         <scene sceneID="8WD-Z2-gCm">
             <objects>
-                <viewController title="Igor" id="vPl-XU-qGM" sceneMemberID="viewController">
+                <viewController title="Igor" id="vPl-XU-qGM" customClass="AboutMeViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wam-o2-reg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gmg-wN-4lG">
+                                <rect key="frame" x="36" y="96" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ny7-Od-1DD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -152,6 +166,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ageLabel" destination="Gmg-wN-4lG" id="JFO-p0-njJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8D-ep-njm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -176,7 +193,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="7Ip-HA-pxN">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Hdw-ak-0lj" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Hdw-ak-0lj" customClass="TabBarController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vAu-IK-hzo">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -196,7 +213,7 @@
         <scene sceneID="E1y-1W-6hd">
             <objects>
                 <navigationController title="PersonData" automaticallyAdjustsScrollViewInsets="NO" id="pKz-iS-TNG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Igor" selectedImage="person.fill" catalog="system" id="wx0-Ps-vec"/>
+                    <tabBarItem key="tabBarItem" title="Igor" image="person.fill" catalog="system" selectedImage="person.fill" id="wx0-Ps-vec"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q3f-c4-6Lx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -214,6 +231,7 @@
     </scenes>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="123"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

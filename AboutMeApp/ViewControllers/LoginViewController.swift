@@ -64,9 +64,8 @@ extension LoginViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabBarVC = segue.destination as? UITabBarController
-        let welcomeVC = tabBarVC?.viewControllers?.first as? WelcomeViewController
-        welcomeVC?.user = user
+        let tabBarVC = segue.destination as? TabBarController
+        tabBarVC?.user = user
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {

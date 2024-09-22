@@ -10,13 +10,14 @@ import UIKit
 final class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var introductionLabel: UILabel!
     
     var user: User!
-//    var person: Person!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = "Welcome, \(user.username ?? "no name") 👋"
+        welcomeLabel.text = "Welcome, \(user.username) 👋"
+        introductionLabel.text = "My name is \(user.person.name) \(user.person.surname)"
     }
-    
-}
+    }
+

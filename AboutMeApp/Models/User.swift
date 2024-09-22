@@ -17,8 +17,6 @@ struct User {
         let job: String
         let photo: String
         let location: String
-        let email: String
-        let telegram: String
         let bio: String
     }
         static func getUser() -> User {
@@ -30,10 +28,8 @@ struct User {
                     surname: "Guryan",
                     age: 31,
                     job: "Software Developer",
-                    photo: "",
+                    photo: "igor",
                     location: "Krasnodar",
-                    email: "sacujo93@yandex.ru",
-                    telegram: "@sacujo",
                     bio: "Родился и вырос на Дальнем Востоке России, в городе Уссурийск. В городе Владивосток получил высшее образование по специальности \"Компьютерная безопасность\". Люблю путешествия, горы, баскетбол, кино и видеоигры. Отец прекрасной девочки по имени Ева. Хозяин 3 кошек и 1 собаки. Учусь разработке iOS приложений. Моя цель - сменить род деятельности и стать грамотным разработчиком. "
                 )
             )

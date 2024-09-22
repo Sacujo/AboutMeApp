@@ -17,7 +17,6 @@
 		156CB3E92C9CC821009506FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156CB3D82C9CC821009506FF /* SceneDelegate.swift */; };
 		156CB3EA2C9CC821009506FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156CB3DF2C9CC821009506FF /* LoginViewController.swift */; };
 		156CB3EB2C9CC821009506FF /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156CB3E02C9CC821009506FF /* WelcomeViewController.swift */; };
-		156CB3EE2C9CC860009506FF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156CB3ED2C9CC859009506FF /* Person.swift */; };
 		156CB3F02C9CCC19009506FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156CB3EF2C9CCC17009506FF /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		156CB3DF2C9CC821009506FF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		156CB3E02C9CC821009506FF /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		156CB3E22C9CC821009506FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		156CB3ED2C9CC859009506FF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		156CB3EF2C9CCC17009506FF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				156CB3EF2C9CCC17009506FF /* User.swift */,
-				156CB3ED2C9CC859009506FF /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,7 +190,6 @@
 			files = (
 				152615602CA05688006D0EA8 /* TabBarController.swift in Sources */,
 				156CB3E82C9CC821009506FF /* AppDelegate.swift in Sources */,
-				156CB3EE2C9CC860009506FF /* Person.swift in Sources */,
 				1526155E2C9FF43C006D0EA8 /* AboutMeViewController.swift in Sources */,
 				152615622CA05FBE006D0EA8 /* BioViewController.swift in Sources */,
 				156CB3F02C9CCC19009506FF /* User.swift in Sources */,

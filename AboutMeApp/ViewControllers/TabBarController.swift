@@ -30,8 +30,6 @@ final class TabBarController: UITabBarController {
             } else if let navigationVC = $0 as? UINavigationController {
                 if let aboutMeVC = navigationVC.topViewController as? AboutMeViewController {
                     aboutMeVC.user = user
-                        
-                    
                 }
             }
         }

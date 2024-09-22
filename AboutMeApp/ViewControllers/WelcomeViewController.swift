@@ -8,13 +8,15 @@
 import UIKit
 
 final class WelcomeViewController: UIViewController {
-    var userName: String!
     
     @IBOutlet weak var welcomeLabel: UILabel!
     
+    var user: User!
+//    var person: Person!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = "Welcome, \(userName!) 👋"
+        welcomeLabel.text = "Welcome, \(user.username ?? "no name") 👋"
     }
     
 }

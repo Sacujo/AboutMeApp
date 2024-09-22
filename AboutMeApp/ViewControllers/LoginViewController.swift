@@ -9,25 +9,30 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
-    private let login = "Igor"
-    private let password = "123"
-    
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    private var user = User.getUser()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loginTextField.text = user.username
+        passwordTextField.text = user.password
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     @IBAction func forgotLoginButtonTapped(_ sender: UIButton) {
-        showAlert(title: "Forgot login?", message: "Your login is \(login)") {
+        showAlert(title: "Forgot login?", message: "Your login is \(user.username)") {
             self.loginTextField.becomeFirstResponder()
         }
     }
     
     @IBAction func forgotPassButtonTapped(_ sender: UIButton) {
-        showAlert(title: "Forgot password?", message: "Your password is \(password)") {
+        showAlert(title: "Forgot password?", message: "Your password is \(user.password)") {
             self.passwordTextField.text = ""
             self.passwordTextField.becomeFirstResponder()
         }
@@ -47,16 +52,21 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard loginTextField.text == login, passwordTextField.text == password else {
-            showAlert(title: "Wrong login or password", message: "Please, enter correct login and password")
+        guard loginTextField.text == user.username, passwordTextField.text == user.password else {
+            showAlert(title: "Wrong login or password", message: "Please, enter correct login and password") {
+                self.loginTextField.text = ""
+                self.passwordTextField.text = ""
+                self.loginTextField.becomeFirstResponder()
+            }
             return false
         }
         return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeVC = segue.destination as? WelcomeViewController
-        welcomeVC?.userName = loginTextField.text
+        let tabBarVC = segue.destination as? UITabBarController
+        let welcomeVC = tabBarVC?.viewControllers?.first as? WelcomeViewController
+        welcomeVC?.user = user
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
